@@ -45,6 +45,15 @@ def main():
         print("✓ Git repository initialized!")
         print()
     
+    # Check if main branch exists, if not create it
+    result = subprocess.run("git branch --list main", shell=True, capture_output=True, text=True)
+    if not result.stdout.strip():
+        print("Creating main branch...")
+        if not run_command("git checkout -b main", "Creating main branch"):
+            return False
+        print("✓ Main branch created!")
+        print()
+    
     # Get current timestamp
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
@@ -58,8 +67,14 @@ def main():
         return False
     
     # Push to GitHub
-    if not run_command("git push origin main", "Pushing changes to GitHub"):
-        return False
+    # First try normal push, if it fails, try with upstream
+    push_result = subprocess.run("git push origin main", shell=True, capture_output=True, text=True)
+    if push_result.returncode != 0:
+        print("First push attempt failed, trying with upstream...")
+        if not run_command("git push -u origin main", "Pushing changes to GitHub with upstream"):
+            return False
+    else:
+        print("✓ Pushing changes to GitHub completed successfully")
     
     print()
     print("=" * 50)
