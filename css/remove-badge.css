@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .w-webflow-badge {
     display: none !important;
     visibility: hidden !important;
@@ -5,4 +6,13 @@
     pointer-events: none !important;
     position: fixed !important;
     transform: translateY(100%) !important;
+=======
+.w-webflow-badge {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: fixed !important;
+    transform: translateY(100%) !important;
+>>>>>>> 3d872d5ec6747125a3674b7899283c360e4260fb
 } 

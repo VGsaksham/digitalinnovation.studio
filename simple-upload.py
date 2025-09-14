@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Digital Innovation Studio Auto-Upload Script
-Automatically commits and pushes changes to GitHub repository
+Simple Auto-Upload Script for Digital Innovation Studio
+Handles git operations with force push option
 """
 
 import subprocess
@@ -29,7 +29,7 @@ def run_command(command, description):
 
 def main():
     print("=" * 50)
-    print("  Digital Innovation Studio Auto-Upload")
+    print("  Digital Innovation Studio Simple Upload")
     print("=" * 50)
     print()
     
@@ -45,15 +45,6 @@ def main():
         print("✓ Git repository initialized!")
         print()
     
-    # Check if main branch exists, if not create it
-    result = subprocess.run("git branch --list main", shell=True, capture_output=True, text=True)
-    if not result.stdout.strip():
-        print("Creating main branch...")
-        if not run_command("git checkout -b main", "Creating main branch"):
-            return False
-        print("✓ Main branch created!")
-        print()
-    
     # Get current timestamp
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
@@ -66,39 +57,12 @@ def main():
     if not run_command(f'git commit -m "{commit_message}"', f"Committing changes with timestamp: {timestamp}"):
         return False
     
-    # Push to GitHub
-    # First try normal push, if it fails, try with upstream
+    # Try normal push first
     push_result = subprocess.run("git push origin main", shell=True, capture_output=True, text=True)
     if push_result.returncode != 0:
-        print("First push attempt failed, checking if we need to pull...")
-        
-        # Check if the error is about remote changes
-        if "fetch first" in push_result.stderr or "rejected" in push_result.stderr:
-            print("Remote repository has changes, fetching and merging...")
-            
-            # First fetch the remote changes
-            if not run_command("git fetch origin main", "Fetching remote changes"):
-                return False
-            
-            # Check if we have any local commits that aren't on remote
-            result = subprocess.run("git log --oneline origin/main..HEAD", shell=True, capture_output=True, text=True)
-            if result.stdout.strip():
-                print("Local commits found, merging with remote...")
-                if not run_command("git merge origin/main --allow-unrelated-histories", "Merging remote changes"):
-                    return False
-            else:
-                print("No local commits to merge, resetting to remote...")
-                if not run_command("git reset --hard origin/main", "Resetting to remote main"):
-                    return False
-            
-            # Try pushing again after merge/reset
-            if not run_command("git push origin main", "Pushing changes to GitHub after merge"):
-                return False
-        else:
-            # Try with upstream for new repositories
-            print("Trying with upstream...")
-            if not run_command("git push -u origin main", "Pushing changes to GitHub with upstream"):
-                return False
+        print("Normal push failed, trying force push...")
+        if not run_command("git push origin main --force", "Force pushing changes to GitHub"):
+            return False
     else:
         print("✓ Pushing changes to GitHub completed successfully")
     
