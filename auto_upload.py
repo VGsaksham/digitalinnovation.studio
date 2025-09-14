@@ -70,9 +70,22 @@ def main():
     # First try normal push, if it fails, try with upstream
     push_result = subprocess.run("git push origin main", shell=True, capture_output=True, text=True)
     if push_result.returncode != 0:
-        print("First push attempt failed, trying with upstream...")
-        if not run_command("git push -u origin main", "Pushing changes to GitHub with upstream"):
-            return False
+        print("First push attempt failed, checking if we need to pull...")
+        
+        # Check if the error is about remote changes
+        if "fetch first" in push_result.stderr or "rejected" in push_result.stderr:
+            print("Remote repository has changes, pulling first...")
+            if not run_command("git pull origin main --allow-unrelated-histories", "Pulling remote changes"):
+                return False
+            
+            # Try pushing again after pull
+            if not run_command("git push origin main", "Pushing changes to GitHub after pull"):
+                return False
+        else:
+            # Try with upstream for new repositories
+            print("Trying with upstream...")
+            if not run_command("git push -u origin main", "Pushing changes to GitHub with upstream"):
+                return False
     else:
         print("✓ Pushing changes to GitHub completed successfully")
     
