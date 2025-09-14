@@ -1,0 +1,94 @@
+{
+  "index_projects": [
+    {
+      "id": "landlite",
+      "title": "LandLite",
+      "url": "http://landlite.in",
+      "image": "img/landlite_img_1.JPG",
+      "description": "A modern interior design project showcasing innovative space solutions"
+    },
+    {
+      "id": "elegance",
+      "title": "Elegance",
+      "url": "https://vgsaksham.github.io/elegance.github.io/",
+      "image": "img/elegance_img_1.JPG",
+      "description": "An elegant e-commerce platform for bags and accessories"
+    },
+    {
+      "id": "mahasharman",
+      "title": "Mahasharman",
+      "url": "https://mahasharmanhealthcare.com/",
+      "image": "img/mahasharman_img_1.png",
+      "category": "Healthcare, Development",
+      "year": "2025",
+      "description": "A healthcare platform focused on wellness and medical services"
+    }
+  ],
+  "work_projects": [
+    {
+      "id": "mahasharman",
+      "title": "Mahasharman",
+      "url": "https://mahasharmanhealthcare.com/",
+      "image": "img/mahasharman_img_1.png",
+      "category": "Healthcare, Development",
+      "year": "2025",
+      "description": "A healthcare platform focused on wellness and medical services"
+    },
+    {
+      "id": "jakcnjill",
+      "title": "Jakc & Jill Toys",
+      "url": "https://jakcnjill.com/",
+      "image": "img/jakcnjill.png",
+      "category": "Toys, Development",
+      "year": "2025",
+      "description": "A toys platform focused on toys and games"
+    },
+    {
+      "id": "elegance",
+      "title": "Elegance",
+      "url": "https://vgsaksham.github.io/elegance.github.io/",
+      "image": "img/elegance_img_1.JPG",
+      "category": "Bags & Accessories, Development",
+      "year": "2024",
+      "description": "An elegant e-commerce platform for bags and accessories"
+    },
+    {
+      "id": "bombay-royal",
+      "title": "Bombay Royal",
+      "url": "https://vgsaksham.github.io/bombayroyals.github.io/index.html",
+      "image": "img/bombay_royal_img_1.JPG",
+      "category": "Clothing, Development",
+      "year": "2024",
+      "description": "A premium clothing brand website with modern design"
+    },
+    {
+        "id": "ClutterCrew",
+        "title": "ClutterCrew",
+        "url": "https://cluttercrewjunk.com/",
+        "image": "img/clutter.JPG",
+        "category": "Professional Hpuse cleaning",
+        "year": "2025",
+        "description": "A professional house cleaning service provider"
+      },
+    {
+      "id": "landlite",
+      "title": "LandLite",
+      "url": "http://landlite.in",
+      "image": "img/landlite_img_1.JPG",
+      "category": "Interior design, Development",
+      "year": "2025",
+      "description": "A modern interior design project showcasing innovative space solutions"
+    },
+    {
+        "id": "dustbusters",
+        "title": "DustBusters",
+        "url": "https://dustbustersproclean.com/",
+        "image": "img/dustbuster.JPG",
+        "category": "Professional House Cleaning",
+        "year": "2025",
+        "description": "A professional house cleaning service provider"
+      }
+    
+    
+  ]
+} 

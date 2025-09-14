@@ -1,0 +1,8 @@
+.w-webflow-badge {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: fixed !important;
+    transform: translateY(100%) !important;
+} 
