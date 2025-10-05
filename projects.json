@@ -10,13 +10,13 @@
       "description": "A healthcare platform focused on wellness and medical services"
     },
     {
-      "id": "jakcnjill",
-      "title": "Jakc & Jill Toys",
-      "url": "https://jakcnjill.com/",
-      "image": "img/jakcnjill.png",
-      "category": "Toys, Development",
+      "id": "landlite",
+      "title": "LandLite",
+      "url": "https://landlite-in-o2ce.vercel.app",
+      "image": "img/landlite_img_1.JPG",
+      "category": "Interior design, Development",
       "year": "2025",
-      "description": "A toys platform focused on toys and games"
+      "description": "A modern interior design project showcasing innovative space solutions"
     },
     {
       "id": "elegance",
