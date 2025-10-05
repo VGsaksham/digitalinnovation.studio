@@ -35,6 +35,15 @@
   ],
   "work_projects": [
     {
+      "id": "landlite",
+      "title": "LandLite",
+      "url": "https://landlite-in-o2ce.vercel.app",
+      "image": "img/landlite_img_1.JPG",
+      "category": "Interior design, Development",
+      "year": "2025",
+      "description": "A modern interior design project showcasing innovative space solutions"
+    },
+    {
       "id": "mahasharman",
       "title": "Mahasharman",
       "url": "https://mahasharmanhealthcare.com/",
@@ -79,15 +88,6 @@
         "year": "2025",
         "description": "A professional house cleaning service provider"
       },
-    {
-      "id": "landlite",
-      "title": "LandLite",
-      "url": "https://landlite-in-o2ce.vercel.app",
-      "image": "img/landlite_img_1.JPG",
-      "category": "Interior design, Development",
-      "year": "2025",
-      "description": "A modern interior design project showcasing innovative space solutions"
-    },
     {
         "id": "dustbusters",
         "title": "DustBusters",
